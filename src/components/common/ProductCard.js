@@ -12,7 +12,7 @@ class ProductCard extends Component {
                     <Link  to={"/product/" + product._id} >
                         <div className="card-image">
                             <figure className="image is-1by1">
-                            <img src={product.img} alt="Placeholder image" />
+                            <img src={product.img} alt="Placeholder" />
                             </figure>
                         </div>
                         <div className="card-content">
