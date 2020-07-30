@@ -1,0 +1,40 @@
+$primary: #1EC9AC !default
+
+$tablet: 769px !default
+
+$desktop: 1000px !default
+
+$widescreen: 1192px !default
+
+$fullhd: 1384px !default
+
+$section-padding: 1rem 1.5rem !default
+
+$section-padding-medium: 2.5rem 1.5rem !default
+
+$section-padding-large: 5rem 1.5rem !default
+
+$link: #383838 !default
+
+=mobile
+    @media screen and (max-width: $tablet - 1px)
+        @content
+
+=tablet
+    @media screen and (min-width: $tablet), print
+        @content
+
+=tablet-only
+    @media screen and (min-width: $tablet) and (max-width: $desktop - 1px)
+        @content
+
+=desktop
+    @media screen and (min-width: $desktop)
+        @content
+
+=desktop-only
+    @media screen and (min-width: $desktop) and (max-width: $widescreen - 1px)
+        @content
+
+.is-primary
+    color: #1EC9AC !important
