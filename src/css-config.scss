@@ -1,0 +1,25 @@
+$primary: #1EC9AC !default;
+
+$tablet: 769px !default;
+
+$desktop: 1000px !default;
+
+$widescreen: 1192px !default;
+
+$fullhd: 1384px !default;
+
+$section-padding: 1rem 0rem !default;
+
+$section-padding-medium: 2.5rem 0rem !default;
+
+$section-padding-large: 5rem 0rem !default;
+
+$link: #1EC9AC !default;
+
+.is-primary{
+    color: #1EC9AC !important
+}
+.color-background{
+    background: #edf3f2 !important;
+    padding: 30px
+}

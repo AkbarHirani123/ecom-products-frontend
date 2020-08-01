@@ -30,7 +30,7 @@ function Home(props) {
         };
     }, [])
 
-    return loading ? <div><img src="https://i.pinimg.com/originals/a2/dc/96/a2dc9668f2cf170fe3efeb263128b0e7.gif" alt="Loading"/></div> : 
+    return loading ? <div className="columns is-centered is-vcentered" style={{height:'40vh'}}><div className="loader" style={{height:'5em',width:'5em'}}></div></div> : 
         error ? <div>{"Error: " + error}</div> :
         <div className="container home">
             <h1 className="title is-2">Products</h1>
