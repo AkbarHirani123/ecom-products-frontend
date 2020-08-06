@@ -1,5 +1,10 @@
 .is-primary {
-  color: #1EC9AC !important;
+  color: #1EC9AC;
+}
+
+a.is-primary:hover {
+  color: #09dcb8;
+  text-decoration: underline;
 }
 
 .color-background {
@@ -32,15 +37,6 @@ a.r-item {
 a.r-item:hover {
   background-color: #383838;
   color: gray;
-}
-
-@media screen and (max-width: 768px) {
-  a.r-item {
-    color: gray;
-  }
-  a.r-item:hover {
-    background-color: #f1f1f1;
-  }
 }
 
 .navbar-toggle span, .navbar-burger {
