@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 function CartPage(props) {
 
     const cartDetails = useSelector(state => state.cartDetails);
-
     const { cartItems } = cartDetails;
 
     const productId = props.match.params.id;
@@ -17,10 +16,6 @@ function CartPage(props) {
         dispatch(removeFromCartAction(productId));
     }
 
-    const handleCheckout = () => {
-        props.history.push("/sign?redirect=shipping");
-    }
-
     useEffect(() => {
         if(productId) {
             dispatch(addToCartAction(productId, qty));
@@ -29,6 +24,10 @@ function CartPage(props) {
             // cleanup
         };
     }, []);
+
+    const handleCheckout = () => {
+        props.history.push("/sign?redirect=shipping");
+    }
 
     return <div className="container cart">
         <section className="section cart-details">

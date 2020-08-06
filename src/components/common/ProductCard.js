@@ -8,8 +8,8 @@ class ProductCard extends Component {
 
         return (
             <div className="column is-half-mobile is-one-third-tablet is-one-third-desktop is-one-quarter-widescreen is-one-quarter-fullhd">
-                <div className="card">
-                    <Link  to={"/product/" + product._id} >
+                <Link  to={"/product/" + product._id} >
+                    <div className="card">
                         <div className="card-image">
                             <figure className="image is-1by1">
                             <img src={product.img} alt="Placeholder" />
@@ -28,8 +28,8 @@ class ProductCard extends Component {
                                 <p>{product.rating} Stars</p>
                             </div>
                         </div>
-                    </Link>
-                </div>
+                    </div>
+                </Link>
             </div>
         )
     }

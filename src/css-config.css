@@ -1,5 +1,10 @@
 .is-primary {
-  color: #1EC9AC !important;
+  color: #1EC9AC;
+}
+
+a.is-primary:hover {
+  color: #09dcb8;
+  text-decoration: underline;
 }
 
 .color-background {
