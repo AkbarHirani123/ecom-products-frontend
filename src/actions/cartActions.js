@@ -1,7 +1,7 @@
 // import { getState } from 'react-redux';
 import Axios from 'axios';
 import Cookie from 'js-cookie';
-import {CART_ADD_ITEM, CART_REMOVE_ITEM} from '../constants/cartConstants';
+import {CART_ADD_ITEM, CART_REMOVE_ITEM, CART_SAVE_SHIPPING, CART_SAVE_PAYMENT } from '../constants/cartConstants';
 
 const addToCartAction = (productId, qty) => async (dispatch, getState) => {
     try {
@@ -34,4 +34,12 @@ const removeFromCartAction = (productId) => async (dispatch, getState) => {
     Cookie.set("cartItems", JSON.stringify(cartItems));
 }
 
-export { addToCartAction, removeFromCartAction };
+const saveShippingAction = (data) => (dispatch) => {
+    dispatch({ type: CART_SAVE_SHIPPING, payload: data });
+}
+
+const savePaymentAction = (data) => (dispatch) => {
+    dispatch({ type: CART_SAVE_PAYMENT, payload: data });
+}
+
+export { addToCartAction, removeFromCartAction, saveShippingAction, savePaymentAction };

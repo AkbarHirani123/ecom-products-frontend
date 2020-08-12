@@ -18,9 +18,11 @@ function SigninPage(props) {
 
     const dispatch = useDispatch();
 
+    const redirect = props.location.search ? props.location.search.split("=")[1] : "/";
+
     useEffect(() => {
         if(userInfo) {
-            props.history.push("/");
+            props.history.push(redirect);
         }
         return () => {
             // cleanup
@@ -81,7 +83,7 @@ function SigninPage(props) {
                             <section className="section">
                                 <div className="container">
                                     <span>New To MyCompany? </span>
-                                    <Link to="/register" className="">Create an Account</Link>
+                                    <Link to={redirect === "/" ? "register" : "register?redirect=" + redirect} className="">Create an Account</Link>
                                 </div>
                             </section>
                         </div>

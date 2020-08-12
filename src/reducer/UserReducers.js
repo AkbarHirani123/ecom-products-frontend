@@ -1,4 +1,4 @@
-import { USER_SIGNIN_REQUEST, USER_SIGNIN_SUCCESS, USER_ACTION_FAIL, USER_REGISTER_REQUEST, USER_REGISTER_FAIL, USER_REGISTER_SUCCESS } from '../constants/userConstants';
+import { USER_SIGNIN_REQUEST, USER_SIGNIN_SUCCESS, USER_SIGNIN_FAIL, USER_REGISTER_REQUEST, USER_REGISTER_FAIL, USER_REGISTER_SUCCESS } from '../constants/userConstants';
 
 function userSigninReducer( state = {}, action) {
     switch(action.type) {
@@ -6,7 +6,7 @@ function userSigninReducer( state = {}, action) {
             return { loading: true };
         case USER_SIGNIN_SUCCESS:
             return { loading: false, userInfo: action.payload };
-        case USER_ACTION_FAIL:
+        case USER_SIGNIN_FAIL:
             return { loading: false, error: action.payload };
         default:
             return state;
@@ -21,7 +21,7 @@ function userRegisterReducer( state = {}, action) {
         case USER_REGISTER_FAIL:
             return { loading: false, error: action.payload };
         default:
-            return state;
+            return state
     }
 }
 

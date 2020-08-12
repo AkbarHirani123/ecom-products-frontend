@@ -11,3 +11,11 @@ a.is-primary:hover {
   background: #edf3f2 !important;
   padding: 30px;
 }
+
+.table td, .table th {
+  vertical-align: middle !important;
+}
+
+.has-background-none {
+  background-color: transparent !important;
+}

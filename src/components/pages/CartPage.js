@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCartAction, removeFromCartAction } from '../../actions/cartActions';
 import { Link } from 'react-router-dom';
+import './CartCheckoutCSS.css';
 
 function CartPage(props) {
 
@@ -26,7 +27,7 @@ function CartPage(props) {
     }, []);
 
     const handleCheckout = () => {
-        props.history.push("/sign?redirect=shipping");
+        props.history.push("/signin?redirect=shipping");
     }
 
     return <div className="container cart">
