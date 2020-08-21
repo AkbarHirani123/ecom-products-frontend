@@ -12,8 +12,13 @@
 
     > div.empty
         border: none
+    .field-label
+        flex-grow: 0
 
 .review-order-details
+    .cart-list-container .field-label
+        flex-grow: 1
+
     > .columns > .column > .container
         background: #F2F6F5
         padding: 30px 20px
@@ -22,6 +27,8 @@
         border: 1px solid #dbdbdb
 
         &.color-background table
+            margin: auto
+
             tr 
                 td
                     padding: 0.3em 0
@@ -31,3 +38,6 @@
                 
                 td:not(:first-of-type)
                     text-align: right
+                
+                td[colspan="2"]
+                    padding: 0

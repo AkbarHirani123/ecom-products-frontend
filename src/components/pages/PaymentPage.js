@@ -13,7 +13,7 @@ function PaymentPage(props) {
 
     const cartDetails = useSelector(state => state.cartDetails);
     const { shipping } = cartDetails;
-    console.log(shipping);
+    
     if(!shipping.address) {
         props.history.push("/shipping");
     }
