@@ -63,14 +63,33 @@ class Header extends Component {
                             <Link to="/cart" className="navbar-item r-item">Cart ({cartItems ? cartItems.reduce((a, c) => (Number(a) + Number(c.qty)), 0): 0})</Link>
                             
                             <div className="navbar-item">
-                                <p className="control">
-                                    {
-                                        user ? 
-                                        <span><Link to="/profile" className="is-primary is-outlined"><span>Hi {userInfo.name}!</span></Link> <Link to="/" className="is-primary content is-small">(Logout)</Link> </span>:
-                                        <Link to="/signin" className="button is-primary is-outlined"><span>Sign in</span></Link>
-                                    }
-                                </p>
+                                {
+                                    !user ? 
+                                    <Link to="/signin" className="button is-primary is-outlined"><span>Sign in</span></Link>:
+                                    userInfo.isAdmin ? (
+                                        <div className="is-flex-desktop" style={{alignItems: "center"}}>
+                                            <span><Link to="/profile" className="is-primary is-outlined"><span>Hi {userInfo.name}!</span></Link> <Link to="/logout" className="is-primary content is-small">(Logout)</Link> </span>
+                                            <div className="navbar-item has-dropdown is-hoverable">
+                                                <a className="navbar-link r-item">
+                                                Admin
+                                                </a>
+
+                                                <div className="navbar-dropdown">
+                                                    <Link className="navbar-item" to="/orders">
+                                                        Orders
+                                                    </Link>
+                                                    <Link className="navbar-item" to="/products">
+                                                        Products
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ) :
+                                    <span><Link to="/profile" className="is-primary is-outlined"><span>Hi {userInfo.name}!</span></Link> <Link to="/logout" className="is-primary content is-small">(Logout)</Link> </span>
+                                    
+                                }
                             </div>
+                            
                         </div>
                     </div>
                 </div>

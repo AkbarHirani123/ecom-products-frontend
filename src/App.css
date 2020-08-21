@@ -17,7 +17,7 @@ a.is-primary:hover {
 }
 
 .has-background-none {
-  background-color: none !important;
+  background-color: transparent !important;
 }
 
 /*! bulma.io v0.9.0 | MIT License | github.com/jgthms/bulma */
@@ -423,11 +423,11 @@ code {
 }
 
 hr {
-  background-color: whitesmoke;
+  background-color: #dbdbdb;
   border: none;
   display: block;
-  height: 2px;
-  margin: 1.5rem 0;
+  height: 1px;
+  margin: 1rem 0;
 }
 
 img {
@@ -2388,7 +2388,7 @@ fieldset[disabled] .button {
   background-color: whitesmoke;
   border-radius: 4px;
   position: relative;
-  padding: 1.25rem 2.5rem 1.25rem 1.5rem;
+  padding: 1.25rem 1.5rem 1.25rem 1.5rem;
 }
 
 .notification a:not(.button):not(.dropdown-item) {

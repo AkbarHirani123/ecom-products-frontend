@@ -3,12 +3,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import CheckoutSteps from './checkout/CheckoutSteps';
 import './CartCheckoutCSS.css';
+import { createOrder } from '../../actions/orderActions';
 
 function ReviewPage(props) {
 
     const cartDetails = useSelector(state => state.cartDetails);
     const { cartItems, shipping, payment } = cartDetails;
-    console.log(shipping);
+
+    const orderCreate = useSelector(state => state.orderCreate);
+    const { loading, error, success, order } = orderCreate;
+
     if(!shipping.address) {
         props.history.push("/shipping");
     } else if(!payment.paymentMethod) {
@@ -24,11 +28,13 @@ function ReviewPage(props) {
 
 
     useEffect(() => {
-        
-    }, []);
+        if(success) {
+            props.history.push("/order/"+order._id);
+        }
+    }, [success]);
 
     const handleSubmitOrder = () => {
-        props.history.push("/signin?redirect=shipping");
+        dispatch(createOrder({ orderItems : cartItems, shipping, payment, subtotalPrice, shippingPrice, taxPrice, totalPrice }));
     }
 
     return <div className="container review">
@@ -92,14 +98,14 @@ function ReviewPage(props) {
                         </div>
                     </div>
                 </div>
-                <div className="column is-one-quarter is-flex">
+                <div className="column is-one-quarter">
                     <div className="container color-background">
-                        <button onClick={handleSubmitOrder} type="button" className="button is-primary has-text-white is-fullwidth mb-5" disabled={cartItems.length === 0}>Submit Order</button>
+                        <button onClick={handleSubmitOrder} type="button" className="button is-primary has-text-white is-fullwidth mb-6 is-medium" disabled={cartItems.length === 0}>Submit Order</button>
                         
-                        <h3 className="title is-4">
+                        <h3 className="title is-4 has-text-centered">
                             Order Summary
                         </h3>
-                        <table className="has-background-none">
+                        <table className="review-table">
                             <tbody>
                                 <tr>
                                     <td>Subtotal</td>
@@ -112,6 +118,9 @@ function ReviewPage(props) {
                                 <tr>
                                     <td>Tax:</td>
                                     <td>${taxPrice}</td>
+                                </tr>
+                                <tr>
+                                    <td colSpan="2"><hr /></td>
                                 </tr>
                                 <tr>
                                     <td><h4 className="is-size-5 is-primary has-text-weight-bold">Order Total:</h4></td>

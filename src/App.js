@@ -13,6 +13,10 @@ import { useSelector } from 'react-redux';
 import ShippingPage from './components/pages/ShippingPage';
 import PaymentPage from './components/pages/PaymentPage';
 import ReviewPage from './components/pages/ReviewPage';
+import OrderDetailsPage from './components/pages/OrderDetailsPage';
+import LogoutPage from './components/pages/LogoutPage';
+import ProfilePage from './components/pages/ProfilePage';
+import OrdersAdminPage from './components/pages/OrdersAdminPage';
 
 function App() {
 
@@ -29,6 +33,10 @@ function App() {
                 <Header cartItems={cartItems} userInfo={userInfo} />
                 <main className="main">
                     <section className="section is-medium">
+                        <Route path="/orders" component={OrdersAdminPage} />
+                        <Route path="/logout" component={LogoutPage} />
+                        <Route path="/profile" component={ProfilePage} />
+                        <Route path="/order/:id" component={OrderDetailsPage} />
                         <Route path="/products" component={ProductsAdminPage} />
                         <Route path="/shipping" component={ShippingPage} />
                         <Route path="/payment" component={PaymentPage} />

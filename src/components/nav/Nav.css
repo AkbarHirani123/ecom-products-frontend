@@ -17,7 +17,7 @@ a.is-primary:hover {
 }
 
 .has-background-none {
-  background-color: none !important;
+  background-color: transparent !important;
 }
 
 .navbar.header {
