@@ -12,6 +12,14 @@ a.is-primary:hover {
   padding: 30px;
 }
 
+.table td, .table th {
+  vertical-align: middle !important;
+}
+
+.has-background-none {
+  background-color: none !important;
+}
+
 .navbar.header {
   background-color: #383838;
 }

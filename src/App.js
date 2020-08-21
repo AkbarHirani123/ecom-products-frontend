@@ -8,7 +8,11 @@ import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
 import SigninPage from './components/pages/SigninPage';
 import RegisterPage from './components/pages/RegisterPage';
+import ProductsAdminPage from './components/pages/ProductsAdminPage';
 import { useSelector } from 'react-redux';
+import ShippingPage from './components/pages/ShippingPage';
+import PaymentPage from './components/pages/PaymentPage';
+import ReviewPage from './components/pages/ReviewPage';
 
 function App() {
 
@@ -25,6 +29,10 @@ function App() {
                 <Header cartItems={cartItems} userInfo={userInfo} />
                 <main className="main">
                     <section className="section is-medium">
+                        <Route path="/products" component={ProductsAdminPage} />
+                        <Route path="/shipping" component={ShippingPage} />
+                        <Route path="/payment" component={PaymentPage} />
+                        <Route path="/review" component={ReviewPage} />
                         <Route path="/signin" component={SigninPage} />
                         <Route path="/register" component={RegisterPage} />
                         <Route path="/product/:id" component={ProductDetailPage} />
