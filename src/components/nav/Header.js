@@ -48,15 +48,15 @@ class Header extends Component {
                                 </a>
 
                                 <div className="navbar-dropdown">
-                                    <a className="navbar-item">
+                                    <Link to="/category/jerseys" className="navbar-item">
                                         Jerseys
-                                    </a>
-                                    <a className="navbar-item">
+                                    </Link>
+                                    <Link to="/category/hats" className="navbar-item">
                                         Hats
-                                    </a>
-                                    <a className="navbar-item">
+                                    </Link>
+                                    <Link to="/category/masks" className="navbar-item">
                                         Masks
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                             

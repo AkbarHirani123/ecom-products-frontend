@@ -40,8 +40,8 @@ function ProductDeailPage(props) {
                     <section className="section product-details">
                         <h1 className="title">{product.name}</h1>
                         <div className="columns is-multiline is-mobile">
-                            <div className="column is-three-fifths">
-                                <img src={product.img} alt={product.name} />
+                            <div className="column is-three-fifths has-text-centered">
+                                <img src={product.img && product.img.slice(0, -3)+"560"} alt={product.name} />
                             </div>
                             <div className="column is-two-fifths">
                                 <div className="container color-background">
