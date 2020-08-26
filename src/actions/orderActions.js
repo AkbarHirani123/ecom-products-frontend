@@ -1,4 +1,5 @@
 import Axios from "axios";
+import Cookie from 'js-cookie';
 import { 
     ORDER_CREATE_SUCCESS, ORDER_CREATE_FAIL, ORDER_CREATE_REQUEST,
     ORDER_DETAILS_REQUEST, ORDER_DETAILS_SUCCESS, ORDER_DETAILS_FAIL, 
@@ -18,6 +19,7 @@ const createOrder = (order) => async (dispatch, getState) => {
             "Authorization" : "Bearer" + userInfo.token 
             }
         });
+        
         dispatch({type: ORDER_CREATE_SUCCESS, payload: newOrder});
         
     } catch (error) {

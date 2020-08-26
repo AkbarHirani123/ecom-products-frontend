@@ -27,7 +27,7 @@
           flex-grow: 1;
 }
 
-.review-order-details > .columns > .column > .container {
+.review-order-details .columns.order-details > .column > .container {
   background: #F2F6F5;
   padding: 30px 20px;
   border-radius: 5px;
@@ -35,22 +35,22 @@
   border: 1px solid #dbdbdb;
 }
 
-.review-order-details > .columns > .column > .container.color-background table {
+.review-order-details .columns.order-details > .column > .container.color-background table {
   margin: auto;
 }
 
-.review-order-details > .columns > .column > .container.color-background table tr td {
+.review-order-details .columns.order-details > .column > .container.color-background table tr td {
   padding: 0.3em 0;
 }
 
-.review-order-details > .columns > .column > .container.color-background table tr td:first-of-type {
+.review-order-details .columns.order-details > .column > .container.color-background table tr td:first-of-type {
   padding-right: 2em;
 }
 
-.review-order-details > .columns > .column > .container.color-background table tr td:not(:first-of-type) {
+.review-order-details .columns.order-details > .column > .container.color-background table tr td:not(:first-of-type) {
   text-align: right;
 }
 
-.review-order-details > .columns > .column > .container.color-background table tr td[colspan="2"] {
+.review-order-details .columns.order-details > .column > .container.color-background table tr td[colspan="2"] {
   padding: 0;
 }

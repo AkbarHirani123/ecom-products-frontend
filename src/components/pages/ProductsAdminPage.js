@@ -67,6 +67,13 @@ function ProductsAdminPage(props) {
 
     const showSuccessAnimation = () => {
         setComplete(true);
+        setId('');
+        setName('');
+        setPrice('');
+        setImg('');
+        setTeam('');
+        setCategory('');
+        setQuantityInStock('');
         setTimeout(() => setComplete(false), 1300);
     }
 

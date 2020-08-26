@@ -65,7 +65,7 @@ function CartPage(props) {
                                                         </div>
                                                         
                                                     </div>
-                                                    <button onClick={() => handleRemoveFromCart(item.product)} className="button is-primary is-inverted is-outlined">Delete</button>
+                                                    <button onClick={() => handleRemoveFromCart(item.product)} className="button is-primary is-inverted">Delete</button>
                                                 </div>
                                             </div>
                                         </div>

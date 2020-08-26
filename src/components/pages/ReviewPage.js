@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import CheckoutSteps from './checkout/CheckoutSteps';
 import './CartCheckoutCSS.css';
 import { createOrder } from '../../actions/orderActions';
+import { clearCartCookie } from '../../actions/cartActions';
 
 function ReviewPage(props) {
 
@@ -29,6 +30,7 @@ function ReviewPage(props) {
 
     useEffect(() => {
         if(success) {
+            dispatch(clearCartCookie());
             props.history.push("/order/"+order._id);
         }
     }, [success]);
